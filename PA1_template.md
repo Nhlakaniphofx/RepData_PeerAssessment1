@@ -120,11 +120,7 @@ require(lattice)
 ```
 
 ```r
-barchart(totalSteps~date , data = totalDailyActivityData, horiz = FALSE, xlab  = "Date", ylab = "Total Steps", main="Total Steps Per Day",
-            panel = function(x,y,...){
-                panel.barchart(x, y, ...)
-                panel.text(x, y, label = totalDailyActivityData$totalSteps, pos = 3,cex = 0.6, srt = 90)
-            }, scales=list(x=list(rot=90)))
+histogram(date~totalSteps , data = totalDailyActivityData, horiz = FALSE, xlab  = "Date", ylab = "Total Steps", main="Total Steps Per Day")
 ```
 
 ![](PA1_template_files/figure-html/TotalSteps_Histogram-1.png)<!-- -->
@@ -260,11 +256,7 @@ Mean remains constant for all days while totals and median increase for other da
 ```r
 #Lattice bar chart to create a histogram of totals per day for impuuted data
 require(lattice)
-barchart(totalSteps~date , data = totalImputedDailyActivityData, horiz = FALSE, xlab  = "Date", ylab = "Total Steps Taken", main="Total Steps Taken Per Day For Imputed Daily Activity Data",
-            panel = function(x,y,...){
-                panel.barchart(x, y, ...)
-                panel.text(x, y, label = totalImputedDailyActivityData$totalSteps, pos = 3,cex = 0.6, srt = 90)
-            }, scales=list(x=list(rot=90)))
+histogram(date~totalSteps , data = totalImputedDailyActivityData, horiz = FALSE, xlab  = "Date", ylab = "Total Steps Taken", main="Total Steps Taken Per Day For Imputed Daily Activity Data")
 ```
 
 ![](PA1_template_files/figure-html/ImputedData_TotalSteps_Histogram-1.png)<!-- -->
